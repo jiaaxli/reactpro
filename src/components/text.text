@@ -1,0 +1,28 @@
+1、安装依赖  不需要指定版本，默认最新
+	npm i react-router react-router-dom --save-dev
+	
+2、引入主要组件对象 
+import {BrowserRouter as Router,Route,Link,Redirect} from 'react-router-dom'；
+
+3、书写结构在组件内部，不需要写在render中，Router组件有且只有一个跟节点，除了路由组件，可以写入其他标签
+	默认 Route所在的位置为路由组件显示的容器（tips：Link写在Router内部形成路由结构）
+
+	<Router>
+		<div>
+			<Link to="/home">首页</Link>
+			<Link to="/about">关于</Link>
+			<Route path="/home" component={Home}></Route>
+			<Route path="/about" component={About}></Route>
+		</div>
+	</Router>
+
+4、路由重定向 通过 Redirect组件对象，设置to属性
+	<Redirect to="/about"/>	
+	
+5、路由参数传递  
+	/a/1 ---this.props.match.params.id
+	/a?id=1---this.props.location.query.id
+	
+6、事件中进行路由切换跳转
+	this.props.history.push('/home')	
+	因为BrowserRouter  相当于 <Router history={history}>故可直接通过history进行push跳转

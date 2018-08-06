@@ -1,0 +1,64 @@
+
+.login{
+	width: 600px;
+	height: 240px;
+	background: #fff;
+    margin-left: 25%;
+    margin-top:30px; 
+	/* position: absolute;
+	top: 20px;	 */
+	padding: 20px 30px 40px;
+}
+.login h2{
+	font-family: "微软雅黑";
+	font-weight: 100;
+	border-bottom: 1px solid #cccccc;
+}
+.login ul{
+	margin:20px 100px;
+}
+input{
+	height: 30px;
+	border-radius: 5px;
+	width: 385px;
+	border: 1px solid #CCCCCC;
+	padding-left: 10px;
+}
+.login li:nth-child(1){
+	margin-bottom: 10px;
+}
+.login ul li{
+	list-style: none;
+}
+.gj{
+	width: 120px;
+}
+.sjh{
+	margin-left: 30px;
+	width: 220px;
+}
+.login li:nth-child(2){
+	margin-bottom: 30px;
+}
+.login li:nth-child(3){
+    margin-bottom: 10px;	
+}
+.login li:nth-child(3) p{
+	text-align: right;
+	font-size: 14px;
+}
+.login li:nth-child(7){
+    margin-bottom: 10px;	
+}
+.login li:nth-child(4) button{
+    height: 40px;
+    width: 395px;
+    background: #5bc0de;
+    border: none;	
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+}
+.login li:nth-child(8){
+	font-size: 14px;
+}
