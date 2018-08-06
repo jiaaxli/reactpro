@@ -18,7 +18,7 @@ class App extends Component {
           <div>
             <div className='head_warp'>
               <ul className='head'>
-                <li><img src={login1}/></li>
+                <li><Link to='/homr'><img src={login1}/></Link></li>
                 <li><Link to='/demand'>定制旅行</Link></li>
                 <li><Link to='/demand'>成为丸子</Link></li>
                 <li><Link to='/demand'>团队企业服务</Link></li>
