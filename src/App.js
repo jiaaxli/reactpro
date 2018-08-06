@@ -18,7 +18,7 @@ class App extends Component {
           <div>
             <div className='head_warp'>
               <ul className='head'>
-                <li><Link to='/homr'><img src={login1}/></Link></li>
+                <li><Link to='/home'><img src={login1}/></Link></li>
                 <li><Link to='/demand'>定制旅行</Link></li>
                 <li><Link to='/demand'>成为丸子</Link></li>
                 <li><Link to='/demand'>团队企业服务</Link></li>
@@ -35,6 +35,7 @@ class App extends Component {
               <Route path='/register' component={Register}>注册</Route>
               <Route path='/details' component={Details}>详情</Route>
               <Route path='/list' component={List}>列表</Route>
+              <Redirect to='/home'></Redirect>
             </div>
             <footer>
               <div className='fonter_f'>
