@@ -1,11 +1,19 @@
 body{
-  font-family: sans-serif;
-  font-size:14px; 
-  background-color: #F2F4F5;
-}
-body,input,li,p,ul{
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
+  font-size:14px; 
+  background: #F2F4F5; 
+}
+#root{
+  overflow: hidden;
+}
+input,li,p,ul{
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: #000;
 }
 a,li,input,button{
   list-style: none;
@@ -40,13 +48,15 @@ a,li,input,button{
  padding:0 5px; 
 }
 .content{
-  padding-top:62px; 
+  overflow: hidden;
+  padding-top:62px;
 }
 footer{
+  overflow: hidden;
+  margin-top: 30px;
     width: 100%;
-    margin-top:30px; 
     background-color: #fff;
-    padding-bottom:40px; 
+    padding-bottom:20px; 
 }
 .fonter_f{
   padding-top:50px; 

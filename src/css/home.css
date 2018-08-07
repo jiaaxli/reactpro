@@ -1,11 +1,157 @@
 .ant-carousel .slick-slide {
   text-align: center;
-  height: 160px;
-  line-height: 160px;
-  background: #364d79;
   overflow: hidden;
 }
 
 .ant-carousel .slick-slide h3 {
   color: #fff;
 }
+.home_b img{
+  height: 600px;
+}
+.home_search{
+  width: 462px;
+  height: 55px;
+  position: absolute;
+  top: 422px;
+  left: 50%;
+  z-index: 10;
+  margin-left: -232px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.home_search input{
+  width: 90%;
+  height: 50px;
+  border: 0;
+  border-radius: 4px;
+  padding: 18px 40px 18px 16px;
+}
+.home_search sapn{
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 19px;
+  right: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+.home_main_warp{
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 30px;
+}
+.home_mian{
+  width: 1170px;
+  margin: 0 auto;
+}
+.home_mian h2{
+  font-size: 32px;
+  text-align: center;
+  padding: 80px 0 50px;
+  font-weight: bold;
+}
+.home_list{
+  overflow: hidden;
+}
+.home_list li{
+  float: left;
+  margin-right:29px; 
+}
+.home_img{
+  width: 304px;
+  height: 177px;
+  margin-bottom:16px;
+  overflow: hidden; 
+  background: orchid;
+  border-radius:5px; 
+}
+.home_p1{
+  font-size: 18px;
+  display: flex;
+}
+.home_p1 span:nth-child(1){
+  font-weight: bold;
+  flex: 1;
+}
+.home_p1 span:nth-child(2){
+  color: #77c0cd;
+}
+.home_p4{
+  display: flex;
+
+}
+.home_p4 span{
+  flex: 1px;
+}
+.home_img1{
+  width: 50%;
+  height: 300px;
+  float: left;
+  overflow: hidden;
+  margin-bottom:30px; 
+  position: relative;
+}
+.home_z{
+  width: 206px;
+  height: 110px;
+  border: 2px solid rgba(255,255,255,0.7);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -55px;
+  margin-left: -103px;
+  text-align: center;
+  font-size:32px; 
+  opacity: 1;
+}
+.home_z p{
+  width: 192px;
+  height: 96px;
+  margin: 5px;
+  display: block;
+  line-height: 96px;
+  background-color: rgba(255,255,255,0.7);
+}
+.home_zx{
+  width: 81%;
+  height: 100%;
+  padding: 60px 56px 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  border-radius: 4px;
+  background-color: rgba(0,0,0,0.6);
+}
+.home_zx{
+  color: #fff;
+}
+.home_zx1{
+  margin-bottom: 24px;
+  font-size: 32px;
+  text-align: center;
+}
+.home_main1{
+
+}
+.hover{
+  opacity: 1;
+}
+.hover2{
+  opacity: 2;
+}
+.home_bg{
+  margin: 0 auto;
+  width: 970px;
+  height: 546px;
+}
+.home_bg img{
+  width: 970px;
+  height: 546px;
+}
+.swiper-container {
+  width: 600px;
+  height: 300px;
+}  

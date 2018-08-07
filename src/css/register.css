@@ -16,7 +16,7 @@
 .zhuce ul{
 	margin:20px 100px;
 }
-input{
+.zhuce input{
 	height: 30px;
 	border-radius: 5px;
 	width: 380px;
@@ -29,19 +29,20 @@ input{
 .zhuce ul li{
 	list-style: none;
 }
-.gj{
-	width: 120px;
+.zhuce .gj{
+	width: 100px;
 }
-.sjh{
+.zhuce .sjh{
 	margin-left: 30px;
-	width: 220px;
+	width: 210px;
 }
 .zhuce li:nth-child(2){
     height: 34px;
-    margin-bottom: 30px;	
+	margin-bottom: 30px;
+	display: flex;	
 }
-.wt{
-	width: 120px;
+.zhuce .wt{
+	width: 100px;
 	float: left;
 }
 .zhuce li:nth-child(2) div{
@@ -54,7 +55,6 @@ input{
 	height: 30px;
 	width: 120px;
 	border-radius: 5px;
-	margin-left: 27px;
 	background: #5bc0de;
 	border: none;
 	color: #fff;

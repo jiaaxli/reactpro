@@ -6,7 +6,8 @@
     "mockjs": "^1.0.1-beta3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "swiper": "^4.3.5"
   },
   "scripts": {
     "start": "react-scripts start",
