@@ -223,4 +223,25 @@
   position: absolute;
   top: 32px;
   left: 78px;
-}   
+}
+.home_nav{
+  display: flex;
+  margin-right: -15px;
+  margin-left: -15px;
+} 
+.home_nav li{
+  width: 25%;
+  flex: 1;
+  margin-left:10px; 
+}
+.home_nav img{
+ margin-bottom: 31px;
+ display: block;
+  max-width: 100%;
+  height: auto;
+}
+.home_nav p{
+  line-height: 1.5;
+  padding: 14px;
+  font-size: 12px;
+}    

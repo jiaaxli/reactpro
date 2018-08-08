@@ -1,5 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
+import {Icon} from 'antd'
 import Home from './home';
 import Login from './login';
 import Register from './register';
@@ -7,6 +8,8 @@ import Details from './details';
 import List from './list';
 import Demand from './demand';
 import login1 from '../img/logo-web.png'
+import app from '../img/APP-img.png';
+
 
 class Commont extends React.Component{
     constructor(props){
@@ -24,12 +27,43 @@ class Commont extends React.Component{
                                 <li><Link to='/commont/demand'>定制旅行</Link></li>
                                 <li><Link to='/demand'>成为丸子</Link></li>
                                 <li><Link to='/demand'>团队企业服务</Link></li>
-                                <li><Link to='/demand'>下载APP</Link></li>
-                                <li><Link to='/demand'>400-872-8336</Link></li>
-                                <li><Link to='/demand'>帮助中心</Link></li>
+                                <li>
+                                  
+                                    下载APP
+                                    <div className='home_app'>
+                                        <img src={app}/>
+                                        <div>
+                                            <p>
+                                                <span>下载丸子地球</span>
+                                                <span>下载丸子地球</span>
+                                            </p>
+                                            <p>
+                                                <span>旅行者端APP</span>
+                                                <span>向导端APP</span>
+                                            </p>
+                                        </div>
+                            
+                                    </div>
+                                </li>
+                                <li>
+                                    <Icon type="phone" style={{fontSize:20}} />　
+                                    400-872-8336
+                                </li>
+                                <li className='help-center'>
+                                    <Link to='/demand'>帮助中心 <Icon type="down" /></Link>
+                                    <ul>
+                                        <li>如何预订丸子向导？</li>
+                                        <li>什么是定制旅行服务？</li>
+                                        <li>如何成为一名优秀的丸子向导？</li>
+                                        <li>查看更多常见问题与解答</li>
+								    </ul>
+                                </li>
                                 <li><Link to='/commont/register'>注册</Link>|<Link to='/commont/login'>登录</Link></li>
                             </ul>
                         </div>
+
+                        
+
                         <div className='content'>
                         
                             <Route path='/commont/home' component={Home}>首页</Route>

@@ -14,13 +14,31 @@ import url7 from '../img/car.jpg';
 import url8 from '../img/trip.jpg';
 import url9 from '../img/service.jpg';
 import url10 from '../img/video-bg.jpg';
+import url11 from '../img/visa.jpg';
+import url12 from '../img/zhaoshang.jpg';
+import url13 from '../img/eluosi.jpg';
+import url14 from '../img/airanshao.jpg';
 
+import Mock from 'mockjs';
+import data from '../data/user';
+
+Mock.mock('http://www.users.com',data);
 
 class Home extends React.Component{
     constructor(props){
         super(props)
     }
-    
+    componentWillMount(){
+        $.ajax({
+            type:'post',
+            url:'http://www.users.com',
+            dataType:'json',
+            success:function(data){
+               var data1=data;
+            //    cons  ole.log(data1)
+            }
+        })
+    }
     componentDidMount(){
         
         $(".home_img1").hover(function () {
@@ -314,10 +332,26 @@ class Home extends React.Component{
 
             <div className='home_main_warp'>
                 <div className='home_mian'>
-                    <h2>四步轻松预订丸子向导</h2>
-                    <div className='home_bg'>
-                        <img src={url10}/>    
-                    </div>
+                    <h2>合作伙伴</h2>
+                    <ul className='home_nav'>
+                        <li>
+                            <img src={url11}/>
+                            <p>丸子地球是Visa高端持卡人尊宠礼遇合作商，Visa的高端持卡人可以享受丸子地球的专享礼遇优惠。</p>
+                        </li>
+                        <li>
+                            <img src={url12}/>
+                            <p>丸子地球是招商银行专享支付通道合作商，招商银行卡用户可以在丸子地球享受招商银行的专属优惠。</p>
+                        </li>
+                        <li>
+                            <img src={url13}/>
+                            <p>丸子地球是俄罗斯国家旅游协会的合作伙伴，用户可以在丸子地球上享受俄罗斯国家旅游协会提供的各种精品旅行体验。</p>
+                        </li>
+                        <li>
+                            <img src={url14}/>
+                            <p>丸子地球是爱燃烧—中文跑步社区的地接合作伙伴，为爱燃烧的全球马拉松提供专业的地接与向导服务。</p>
+                        </li>
+                    </ul>
+                    
                 </div>  
             </div>
            
