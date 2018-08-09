@@ -27,20 +27,24 @@ Mock.mock('http://www.users.com',data);
 class Home extends React.Component{
     constructor(props){
         super(props)
+        this.state={
+            arr:[]
+        }
     }
+    
     componentWillMount(){
+        var _this=this
         $.ajax({
             type:'post',
             url:'http://www.users.com',
             dataType:'json',
+            async:false,
             success:function(data){
-               var data1=data;
-            //    cons  ole.log(data1)
+                _this.setState({arr:data})
             }
         })
     }
     componentDidMount(){
-        
         $(".home_img1").hover(function () {
 
             $(this).children(".home_zx").css("opacity",1)
@@ -49,11 +53,9 @@ class Home extends React.Component{
             $(this).children(".home_zx").css("opacity",0)
             $(this).children(".home_z").css("opacity",1)
           })
-          var mySwiper = new Swiper ('.swiper-container', {
+        new Swiper ('.swiper-container', {
                 autoplay: false,
                 loop : true,
-            
-            
             // 如果需要前进后退按钮
             navigation: {
               nextEl: '.swiper-button-next',
@@ -66,11 +68,11 @@ class Home extends React.Component{
             <div>
                 <div className="home_b">
                     <Carousel autoplay>
-                        <div><img src={url1}/></div>
-                        <div><img src={url2}/></div>
-                        <div><img src={url3}/></div>
-                        <div><img src={url4}/></div>
-                        <div><img src={url5}/></div>
+                        <div><img src={url1} alt=''/></div>
+                        <div><img src={url2} alt=''/></div>
+                        <div><img src={url3} alt=''/></div>
+                        <div><img src={url4} alt=''/></div>
+                        <div><img src={url5} alt=''/></div>
                     </Carousel>
                     <div className='home_search'>
                         <input type='text' placeholder='请输入您想去的国家，城市'/>
@@ -81,27 +83,36 @@ class Home extends React.Component{
                     <div className='home_mian'>
                             <h2>备受好评的丸子</h2>
                         <ul className='home_list'>
-                            <li>
-                                <div className='home_img'></div>
-                                <p className='home_p1'>
-                                    <span>Mr.Yu</span>
-                                    <span>
-                                        <strong>CNY1000</strong>
-                                    起</span>
-                                </p>
-                                <p className='home_p2'><span>自由职业</span></p>
-                                <p className='home_p3'>
-                                    <Icon type="environment-o" />
-                                    日本-北海道-札幌
-                                    
-                                </p>
-                                <p className='home_p4'>
-                                    <span>徒步向导</span>
-                                    <span>带车向导</span>
-                                    <span>徒步接送机</span>
-                                    <span>带车接送机</span>
-                                </p>
-                            </li>
+                           
+                            {
+                                this.state.arr.users.map(function(item,i){
+                                    return(
+                                        <li key={i}>
+                                            <div className='home_img'>
+                                                <img src={item.img} alt=''/>
+                                            </div>
+                                            <p className='home_p1'>
+                                                <span>{item.name}</span>
+                                                <span>
+                                                    <strong>CNY1000</strong>
+                                                起</span>
+                                            </p>
+                                            <p className='home_p2'><span>{item.Occupation}</span></p>
+                                            <p className='home_p3'>
+                                                <Icon type="environment-o" />
+                                                {item.county}
+                                                
+                                            </p>
+                                            <p className='home_p4'>
+                                                <span>{item.option}</span>
+                                                {/* <span>{item.option}</span>
+                                                <span>{item.option}</span>
+                                                <span>{item.option}</span> */}
+                                            </p>
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>  
                 </div>
@@ -110,7 +121,7 @@ class Home extends React.Component{
                     <div className='home_mian home_main1'>
                         <h2>尊享品质服务</h2>
                         <div className='home_img1'>
-                            <img src={url6}/>
+                            <img src={url6} alt=''/>
                             <div className='home_z'>
                                 <p>中文向导</p>
                             </div>
@@ -122,7 +133,7 @@ class Home extends React.Component{
                             </div>
                         </div>
                         <div className='home_img1'>
-                            <img src={url7}/>
+                            <img src={url7} alt=''/>
                             <div className='home_z'>
                                 <p>接机包车</p>
                             </div>
@@ -134,7 +145,7 @@ class Home extends React.Component{
                             </div>
                         </div>
                         <div className='home_img1'>
-                            <img src={url8}/>
+                            <img src={url8} alt=''/>
                             <div className='home_z'>
                                 <p>定制旅行</p>
                             </div>
@@ -146,7 +157,7 @@ class Home extends React.Component{
                             </div>
                         </div>
                         <div className='home_img1'>
-                            <img src={url9}/>
+                            <img src={url9} alt=''/>
                             <div className='home_z'>
                                 <p>保障服务</p>
                             </div>
@@ -165,7 +176,7 @@ class Home extends React.Component{
                 <div className='home_mian'>
                     <h2>四步轻松预订丸子向导</h2>
                     <div className='home_bg'>
-                        <img src={url10}/>    
+                        <img src={url10} alt=''/>    
                     </div>
                 </div>  
             </div>
@@ -265,7 +276,7 @@ class Home extends React.Component{
 这样的服务态度绝对算得上超五星的啦。
 
 2、专业性
-行程规划的合理性：我们的环岛游行程恰逢圣诞假期，在圣诞节当天，英国的绝大多数商店、景点、超市等全部休息。李向导给我们规划的行程中，圣诞节在湖区以游览自然风光为主，并提醒我们提前在酒店预定了圣诞大餐，避免了圣诞期间饿肚子的尴尬😅。
+行程规划的合理性：我们的环岛游行程恰逢圣诞假期，在圣诞节当天，英国的绝大多数商店、景点、超市等全部休息。李向导给我们规划的行程中，圣诞节在湖区以游览自然风光为主，并提醒我们提前在酒店预定了圣诞大餐，避免了圣诞期间饿肚子的尴尬。
 
 时间的掌控能力：李向导是个非常守时的人，每天他都会在预定时间前十分钟左右到楼下等我们。每到一地，他总是留给我们充裕的时间，却又不忘提醒我们下面的计划。在他的引导之下，我们总能充分利用自己的时间去探索这片陌生的土地。
 
@@ -288,7 +299,7 @@ class Home extends React.Component{
 他帮忙预约大英博物馆的中文讲解员—陈老师，一位浸淫于大英博物馆十多年的资深向导，为你讲述藏在展品背后的故事，教你学会如何去使用展品学知识。
 由他陪同去剑桥，游船活动时可享受刷脸优惠。
 了解最准确的促销信息，根据客人的要求，推荐最适合的购物体验，如在比斯特的奥特莱斯，提醒我们在购物前领取银联九折优惠券；在哈罗德百货提前申请折扣。
-临走前，因为行李太多，还专门帮我们找了纸箱📦，胶带和剪刀。
+临走前，因为行李太多，还专门帮我们找了纸箱，胶带和剪刀。
 真可谓，只有你想不到的（只要不太过分），没有他办不到的。
 
 非常幸运能遇到这么好的向导，这么多天的相处也使我们成为了朋友。祝福这个爱家爱孩子的好父亲，在自己不懈的努力下，收获更多的成功。也希望下次能再有机会在他的陪同下完成苏格兰、威尔士和北爱尔兰的行程。
@@ -335,19 +346,19 @@ class Home extends React.Component{
                     <h2>合作伙伴</h2>
                     <ul className='home_nav'>
                         <li>
-                            <img src={url11}/>
+                            <img src={url11} alt=''/>
                             <p>丸子地球是Visa高端持卡人尊宠礼遇合作商，Visa的高端持卡人可以享受丸子地球的专享礼遇优惠。</p>
                         </li>
                         <li>
-                            <img src={url12}/>
+                            <img src={url12} alt=''/>
                             <p>丸子地球是招商银行专享支付通道合作商，招商银行卡用户可以在丸子地球享受招商银行的专属优惠。</p>
                         </li>
                         <li>
-                            <img src={url13}/>
+                            <img src={url13} alt=''/>
                             <p>丸子地球是俄罗斯国家旅游协会的合作伙伴，用户可以在丸子地球上享受俄罗斯国家旅游协会提供的各种精品旅行体验。</p>
                         </li>
                         <li>
-                            <img src={url14}/>
+                            <img src={url14} alt=''/>
                             <p>丸子地球是爱燃烧—中文跑步社区的地接合作伙伴，为爱燃烧的全球马拉松提供专业的地接与向导服务。</p>
                         </li>
                     </ul>

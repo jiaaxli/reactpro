@@ -13,7 +13,7 @@ class Login extends React.Component{
                     <h2>用户登录</h2>
                     <ul>
                         <li>
-                            <input type="text" className="gj"/>
+                            <input type="text" className="gj" defaultValue="中国"/>
                             <input type="text" className="sjh" placeholder="手机号(不含国家区号)"/>
                         </li>										
                         <li><input type="password" placeholder="密码"/></li>

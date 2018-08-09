@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router,Route,Link,Redirect} from 'react-router-dom';
+import {BrowserRouter as Router,Route,Redirect} from 'react-router-dom';
 import './App.css';
 import Commont from './components/commont';
 

@@ -7,14 +7,13 @@ import Register from './register';
 import Details from './details';
 import List from './list';
 import Demand from './demand';
-import login1 from '../img/logo-web.png'
+import login1 from '../img/logo-web.png';
 import app from '../img/APP-img.png';
 
 
 class Commont extends React.Component{
     constructor(props){
         super(props)
-
     }
     render(){
         return(
@@ -23,7 +22,7 @@ class Commont extends React.Component{
                     <div>
                         <div className='head_warp'>
                             <ul className='head'>
-                                <li><Link to='/commont/home'><img src={login1}/></Link></li>
+                                <li><Link to='/commont/home'><img src={login1} alt=''/></Link></li>
                                 <li><Link to='/commont/demand'>定制旅行</Link></li>
                                 <li><Link to='/demand'>成为丸子</Link></li>
                                 <li><Link to='/demand'>团队企业服务</Link></li>
@@ -31,7 +30,7 @@ class Commont extends React.Component{
                                   
                                     下载APP
                                     <div className='home_app'>
-                                        <img src={app}/>
+                                        <img src={app} alt=''/>
                                         <div>
                                             <p>
                                                 <span>下载丸子地球</span>
@@ -66,12 +65,12 @@ class Commont extends React.Component{
 
                         <div className='content'>
                         
-                            <Route path='/commont/home' component={Home}>首页</Route>
+                            <Route path='/commont/home' component={Home}></Route>
                             <Route path='/commont/demand' component={Demand}></Route>
-                            <Route path='/commont/login' component={Login}>登录</Route>
-                            <Route path='/commont/register' component={Register}>注册</Route>
-                            <Route path='/commont/details' component={Details}>详情</Route>
-                            <Route path='/commont/list' component={List}>列表</Route>
+                            <Route path='/commont/login' component={Login}></Route>
+                            <Route path='/commont/register' component={Register}></Route>
+                            <Route path='/commont/details' component={Details}></Route>
+                            <Route path='/commont/list' component={List}></Route>
  
                         </div>
                         <footer>

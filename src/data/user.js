@@ -27,7 +27,7 @@ var users = Mock.mock({
         'id|+1':0,
         'name':'@cname',
         'img':'@img',
-        'county':'@county',
+        'county':'@county(true)',
         'option':'@option',
         'Occupation':'@Occupation'
     }]
